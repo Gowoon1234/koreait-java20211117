@@ -2,7 +2,7 @@ package a08_반복;
 
 import java.util.Scanner;
 
-public class GuGudan {
+public class WhileGuGuDan2 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
@@ -14,12 +14,21 @@ public class GuGudan {
 		System.out.print("마지막 단수 : ");
 		gugudanEnd = in.nextInt();
 		
-		for (int i = gugudanStart; i < gugudanEnd+1; i++) {
-			System.out.println(i + "단");
-			for (int j = 1; j < 10; j++) {
-				System.out.println(i + " X " + j + " = " + i*j);
+		int dan = gugudanStart;
+		
+		while(dan < gugudanEnd+1) {
+			if (dan%2 != 0) {
+				dan++;
+				continue;
+			}
+			System.out.println(dan + "단");
+			int number = 1;
+			while (number < 10) {
+				System.out.println(dan + " X " + number + " = " + dan*number);
+				number++;
 			}
 			System.out.println();
+			dan++;
 		}
 	}
 
